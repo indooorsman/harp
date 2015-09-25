@@ -1,10 +1,11 @@
 {
   "name": "charp",
-  "version": "0.19.0",
-  "description": "Static web server with built in preprocessing",
-  "author": "Brock Whitten <brock@chloi.io>",
+  "version": "0.19.2",
+  "description": "Static web server with built in preprocessing, support Access-Control-Allow-Origin setting",
+  "author": "indooorsman@gmail.com",
   "contributors":
-  [ "Brock Whitten <brock@chloi.io>"
+  [ "indooorsman@gmail.com"
+  ,  "Brock Whitten <brock@chloi.io>"
   , "Rob Ellis <rob@chloi.io>"
   , "Jorge Pedret <jorge@chloi.io>"
   , "Michael Brooks <michael@michaelbrooks.ca>"
@@ -60,7 +61,7 @@
   "license": "MIT",
   "preferGlobal": true,
   "readmeFilename": "README.md",
-  "bin": "./bin/harp",
+  "bin": "./bin/charp",
   "engines": {
     "node": ">=0.10"
   }
