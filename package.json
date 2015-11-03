@@ -1,6 +1,6 @@
 {
   "name": "charp",
-  "version": "0.19.5",
+  "version": "0.19.6",
   "description": "Static web server with built in preprocessing, support Access-Control-Allow-Origin setting",
   "author": "indooorsman@gmail.com",
   "contributors": [
