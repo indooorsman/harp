@@ -1,4 +1,6 @@
-# Harp
+# cHarp
+
+*forked from [harp](http://harpjs.com/), additional support for accessControlAllowOrigin setting*
 
 > zero-configuration web server with built in pre-processing
 
@@ -43,14 +45,14 @@ Authored and maintained by [@sintaxi](http://twitter.com/sintaxi). Made for the 
 
 ### Installation
 
-    sudo npm install -g harp
+    sudo npm install -g charp
 
 ### Quick Start
 
 Creating a new harp application is a breeze...
 
-    harp init myproj
-    harp server myproj
+    charp init myproj
+    charp server myproj
 
 Your Harp application is now running at [http://localhost:9000]()
 
@@ -58,11 +60,11 @@ Your Harp application is now running at [http://localhost:9000]()
 
 ## Documentation
 
-Harp can be used as a library or as a command line utility.
+cHarp can be used as a library or as a command line utility.
 
 ### CLI Usage
 
-    Usage: harp [command] [options]
+    Usage: charp [command] [options]
 
     Commands:
 
@@ -78,19 +80,19 @@ Harp can be used as a library or as a command line utility.
 
 Start the server in root of your application by running...
 
-    harp server
+    charp server
 
 You may optionally supply a port to listen on...
 
-    harp server --port 8002
+    charp server --port 8002
 
 Compile an application from the root of your application by running...
 
-    harp compile
+    charp compile
 
 You may optionally pass in a path to where you want the compiled assets to go...
 
-    harp compile --output /path/to/cordova/project/www
+    charp compile --output /path/to/cordova/project/www
 
 ### Lib Usage
 
@@ -99,22 +101,27 @@ You may also use harp as a node library for compiling or running as a server.
 Serve up a harp application...
 
 ```js
-var harp = require("harp")
-harp.server(projectPath [,args] [,callback])
+var charp = require("charp")
+charp.server(projectPath, {
+    port: 12306,
+    accessControlAllowOrigin: '*'
+}, function() {
+    // server started
+});
 ```
 
 **Or** compile harp application
 
 ```js
-var harp = require("harp")
-harp.compile(projectPath [,outputPath] [, callback])
+var charp = require("charp")
+charp.compile(projectPath [,outputPath] [, callback])
 ```
 
 **Or** use as Connect/ExpressJS middleware
 
 ```js
 var express = require("express");
-var harp = require("harp");
+var charp = require("charp");
 var app = express();
 ```
 
@@ -122,7 +129,7 @@ var app = express();
 // Express 3
 app.configure(function(){ 
   app.use(express.static(__dirname + "/public"));
-  app.use(harp.mount(__dirname + "/public"));
+  app.use(charp.mount(__dirname + "/public"));
 });
 ```
 
@@ -130,7 +137,7 @@ app.configure(function(){
 // Express 4
 
 app.use(express.static(__dirname + "/public"));
-app.use(harp.mount(__dirname + "/public"));
+app.use(charp.mount(__dirname + "/public"));
 
 ```
 
