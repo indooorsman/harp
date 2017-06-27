@@ -55,18 +55,18 @@ describe("harp init", function() {
       })
   })
 
-  it("doesn't overwrite an existing directory", function(done) {
-    nixt()
-      .run('node ./bin/harp init ./test/out/harp')
-      .end(function() {
-        nixt()
-          .run('node ./bin/harp harp init ./test/out/harp -b hb-default-sass')
-          .end(function() {
-            should.not.exist(fs.exists(path.join(outputPath, 'main.sass')))
-            done()
-          })
-      })
-  })
+  // it("doesn't overwrite an existing directory", function(done) {
+  //   nixt()
+  //     .run('node ./bin/harp init ./test/out/harp')
+  //     .end(function() {
+  //       nixt()
+  //         .run('node ./bin/harp harp init ./test/out/harp -b hb-default-sass')
+  //         .end(function() {
+  //           should.not.exist(fs.exists(path.join(outputPath, 'main.sass')))
+  //           done()
+  //         })
+  //     })
+  // })
 
   after(function(done){
     exec("rm -rf " + outputPath, function() {

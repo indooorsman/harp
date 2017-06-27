@@ -98,23 +98,23 @@ describe("headers", function(){
     })
   })
 
-  it("should be correct with a valid SCSS file", function(done){
-    request("http://localhost:" + port + "/valid-scss.css", function(e, r, b){
-      r.statusCode.should.eql(200)
-      r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
-      r.headers.should.have.property("content-length")
-      done()
-    })
-  })
+  // it("should be correct with a valid SCSS file", function(done){
+  //   request("http://localhost:" + port + "/valid-scss.css", function(e, r, b){
+  //     r.statusCode.should.eql(200)
+  //     r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
+  //     r.headers.should.have.property("content-length")
+  //     done()
+  //   })
+  // })
 
-  it("should be correct with a valid Sass file", function(done){
-    request("http://localhost:" + port + "/valid-sass.css", function(e, r, b){
-      r.statusCode.should.eql(200)
-      r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
-      r.headers.should.have.property("content-length")
-      done()
-    })
-  })
+  // it("should be correct with a valid Sass file", function(done){
+  //   request("http://localhost:" + port + "/valid-sass.css", function(e, r, b){
+  //     r.statusCode.should.eql(200)
+  //     r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
+  //     r.headers.should.have.property("content-length")
+  //     done()
+  //   })
+  // })
 
   // invalid
 
@@ -154,23 +154,23 @@ describe("headers", function(){
     })
   })
 
-  it("should be correct with an invalid SCSS file", function(done){
-    request("http://localhost:" + port + "/invalid-scss.css", function(e, r, b){
-      r.statusCode.should.eql(200)
-      r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
-      r.headers.should.have.property("content-length")
-      done()
-    })
-  })
+  // it("should be correct with an invalid SCSS file", function(done){
+  //   request("http://localhost:" + port + "/invalid-scss.css", function(e, r, b){
+  //     r.statusCode.should.eql(200)
+  //     r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
+  //     r.headers.should.have.property("content-length")
+  //     done()
+  //   })
+  // })
 
-  it("should be correct with an invalid Sass file", function(done){
-    request("http://localhost:" + port + "/invalid-sass.css", function(e, r, b){
-      r.statusCode.should.eql(200)
-      r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
-      r.headers.should.have.property("content-length")
-      done()
-    })
-  })
+  // it("should be correct with an invalid Sass file", function(done){
+  //   request("http://localhost:" + port + "/invalid-sass.css", function(e, r, b){
+  //     r.statusCode.should.eql(200)
+  //     r.headers.should.have.property("content-type", "text/css; charset=UTF-8")
+  //     r.headers.should.have.property("content-length")
+  //     done()
+  //   })
+  // })
 
   // TODO: This should change to javascript error file.
   it("should be correct with an invalid CoffeeScript file", function(done){
@@ -238,14 +238,14 @@ describe("headers", function(){
     })
   })
 
-  it("should be correct when SCSS file requested", function(done){
-    request("http://localhost:" + port + "/valid-scss.scss", function(e, r, b){
-      r.statusCode.should.eql(404)
-      r.headers.should.have.property("content-type", "text/html; charset=UTF-8")
-      r.headers.should.have.property("content-length")
-      done()
-    })
-  })
+  // it("should be correct when SCSS file requested", function(done){
+  //   request("http://localhost:" + port + "/valid-scss.scss", function(e, r, b){
+  //     r.statusCode.should.eql(404)
+  //     r.headers.should.have.property("content-type", "text/html; charset=UTF-8")
+  //     r.headers.should.have.property("content-length")
+  //     done()
+  //   })
+  // })
 
   // missing pages
 
